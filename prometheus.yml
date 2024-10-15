@@ -1,0 +1,14 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds.
+
+# A scrape configuration containing Prometheus itself and Node Exporter:
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"] # This is the Prometheus server itself
+
+  - job_name: "node"
+    static_configs:
+      - targets: ["localhost:9100"] # This is the Node Exporter
+
